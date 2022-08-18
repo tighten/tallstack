@@ -6,10 +6,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "devdojo/tails": "^0.90.10",
         "guzzlehttp/guzzle": "^7.2",
+        "laravel-frontend-presets/tall": "^5.0",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "livewire/livewire": "^2.10"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
