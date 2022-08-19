@@ -21,8 +21,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Tails::get('/', 'tallstack');
-Route::redirect('home', '/')->name('home');
+Route::view('/', 'home')->name('home');
+Route::view('resources', 'resources')->name('resources');
+Route::view('about', 'about')->name('about');
+Route::view('partners', 'partners')->name('partners');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
