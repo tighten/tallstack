@@ -27,7 +27,6 @@ Tails::get('resources', 'tallstack.resources');
 Tails::get('about', 'tallstack.about');
 
 Route::redirect('home', '/')->name('home');
-
 Route::get('submit', SubmitResource::class);
 
 Route::middleware('guest')->group(function () {
