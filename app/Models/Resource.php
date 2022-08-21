@@ -9,5 +9,10 @@ class Resource extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'slug', 'url', 'image', 'description'];
+    protected $casts = [
+        'approved' => 'boolean',
+    ];
+
+    protected $fillable = ['title', 'slug', 'url', 'image', 'description', 'approved'];
+    
 }
