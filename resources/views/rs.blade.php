@@ -1,1 +1,0 @@
-@tails('tallstack.resources:page.title')

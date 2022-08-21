@@ -25,11 +25,7 @@ use Illuminate\Support\Facades\Route;
 Tails::get('/', 'tallstack');
 Tails::get('resources', 'tallstack.resources');
 Tails::get('about', 'tallstack.about');
-Route::view('rs', 'rs');
 
-Route::get('path', function(){
-    echo storage_path('app');
-});
 Route::redirect('home', '/')->name('home');
 
 Route::get('submit', SubmitResource::class);
