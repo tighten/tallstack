@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Checkbox;
 
 class ResourceResource extends Resource
 {
@@ -28,8 +30,10 @@ class ResourceResource extends Resource
                 Forms\Components\TextInput::make('title')->required(),
                 Forms\Components\TextInput::make('slug')->required(),
                 Forms\Components\TextInput::make('url')->required(),
-                FileUpload::make('image')->image()->required(),
-                RichEditor::make('description')
+                FileUpload::make('image')->image(),
+                RichEditor::make('description'),
+                Toggle::make('approved')->onIcon('heroicon-s-eye')
+                ->offIcon('heroicon-s-eye-off')
 
             ]);
     }

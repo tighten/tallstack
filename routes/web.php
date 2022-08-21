@@ -7,6 +7,7 @@ use App\Http\Livewire\Auth\Passwords\Confirm;
 use App\Http\Livewire\Auth\Passwords\Email;
 use App\Http\Livewire\Auth\Passwords\Reset;
 use App\Http\Livewire\Auth\Register;
+use App\Http\Livewire\SubmitResource;
 use App\Http\Livewire\Auth\Verify;
 use Illuminate\Support\Facades\Route;
 
@@ -21,10 +22,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'home')->name('home');
-Route::view('resources', 'resources')->name('resources');
-Route::view('about', 'about')->name('about');
-Route::view('partners', 'partners')->name('partners');
+Tails::get('/', 'tallstack');
+Tails::get('resources', 'tallstack.resources');
+Tails::get('about', 'tallstack.about');
+Route::view('rs', 'rs');
+Route::redirect('home', '/')->name('home');
+
+Route::get('submit', SubmitResource::class);
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)

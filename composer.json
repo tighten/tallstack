@@ -6,14 +6,17 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "filament/filament": "^2.0",
         "devdojo/tails": "^0.90.10",
+        "doctrine/dbal": "^3.4",
+        "filament/filament": "^2.0",
+        "filament/notifications": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel-frontend-presets/tall": "^5.0",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "livewire/livewire": "^2.10"
+        "livewire/livewire": "^2.10",
+        "yepsua/filament-captcha-field": "^0.1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
