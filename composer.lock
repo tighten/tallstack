@@ -387,16 +387,16 @@
         },
         {
             "name": "devdojo/tails",
-            "version": "v0.90.14",
+            "version": "v0.90.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thedevdojo/tails.git",
-                "reference": "271889c9e3595c67434626f9f2bc64d840ed06c3"
+                "reference": "c764de53f88d8e1341fe15393a5d3534fecef3f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thedevdojo/tails/zipball/271889c9e3595c67434626f9f2bc64d840ed06c3",
-                "reference": "271889c9e3595c67434626f9f2bc64d840ed06c3",
+                "url": "https://api.github.com/repos/thedevdojo/tails/zipball/c764de53f88d8e1341fe15393a5d3534fecef3f0",
+                "reference": "c764de53f88d8e1341fe15393a5d3534fecef3f0",
                 "shasum": ""
             },
             "require": {
@@ -442,9 +442,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thedevdojo/tails/issues",
-                "source": "https://github.com/thedevdojo/tails/tree/v0.90.14"
+                "source": "https://github.com/thedevdojo/tails/tree/v0.90.15"
             },
-            "time": "2022-08-21T13:05:35+00:00"
+            "time": "2022-08-21T14:20:14+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
