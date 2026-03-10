@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Auth\Passwords;
 
+use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Support\Facades\Password;
 use Livewire\Component;
 
@@ -35,7 +36,7 @@ class Email extends Component
      *
      * @return \Illuminate\Contracts\Auth\PasswordBroker
      */
-    public function broker()
+    public function broker(): PasswordBroker
     {
         return Password::broker();
     }
