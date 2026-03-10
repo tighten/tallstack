@@ -69,8 +69,6 @@ class Reset extends Component
 
     /**
      * Get the broker to be used during password reset.
-     *
-     * @return \Illuminate\Contracts\Auth\PasswordBroker
      */
     public function broker(): PasswordBroker
     {
@@ -79,8 +77,6 @@ class Reset extends Component
 
     /**
      * Get the guard to be used during password reset.
-     *
-     * @return \Illuminate\Contracts\Auth\StatefulGuard
      */
     protected function guard(): StatefulGuard
     {

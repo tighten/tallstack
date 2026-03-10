@@ -33,8 +33,6 @@ class Email extends Component
 
     /**
      * Get the broker to be used during password reset.
-     *
-     * @return \Illuminate\Contracts\Auth\PasswordBroker
      */
     public function broker(): PasswordBroker
     {
