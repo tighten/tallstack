@@ -12,7 +12,7 @@ class EmailTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function can_view_password_request_page()
+    public function can_view_password_request_page(): void
     {
         $this->get(route('password.request'))
             ->assertSuccessful()
@@ -20,7 +20,7 @@ class EmailTest extends TestCase
     }
 
     /** @test */
-    public function a_user_must_enter_an_email_address()
+    public function a_user_must_enter_an_email_address(): void
     {
         Livewire::test('auth.passwords.email')
             ->call('sendResetPasswordLink')
@@ -28,7 +28,7 @@ class EmailTest extends TestCase
     }
 
     /** @test */
-    public function a_user_must_enter_a_valid_email_address()
+    public function a_user_must_enter_a_valid_email_address(): void
     {
         Livewire::test('auth.passwords.email')
             ->set('email', 'email')
@@ -37,7 +37,7 @@ class EmailTest extends TestCase
     }
 
     /** @test */
-    public function a_user_who_enters_a_valid_email_address_will_get_sent_an_email()
+    public function a_user_who_enters_a_valid_email_address_will_get_sent_an_email(): void
     {
         $user = User::factory()->create();
 

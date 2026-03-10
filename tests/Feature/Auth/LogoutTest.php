@@ -12,7 +12,7 @@ class LogoutTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function an_authenticated_user_can_log_out()
+    public function an_authenticated_user_can_log_out(): void
     {
         $user = User::factory()->create();
         $this->be($user);
@@ -24,7 +24,7 @@ class LogoutTest extends TestCase
     }
 
     /** @test */
-    public function an_unauthenticated_user_can_not_log_out()
+    public function an_unauthenticated_user_can_not_log_out(): void
     {
         $this->post(route('logout'))
             ->assertRedirect(route('login'));

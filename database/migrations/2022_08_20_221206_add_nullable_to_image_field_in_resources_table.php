@@ -11,7 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::table('resources', function (Blueprint $table) {
             $table->string('image')->nullable()->change();
@@ -23,7 +23,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::table('image_field_in_resources', function (Blueprint $table) {
             //

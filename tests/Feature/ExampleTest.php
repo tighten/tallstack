@@ -11,7 +11,7 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function test_basic_test()
+    public function test_basic_test(): void
     {
         $this->get(route('home'))->assertSuccessful();
     }

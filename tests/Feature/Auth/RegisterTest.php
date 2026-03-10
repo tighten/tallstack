@@ -15,7 +15,7 @@ class RegisterTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function registration_page_contains_livewire_component()
+    public function registration_page_contains_livewire_component(): void
     {
         $this->get(route('register'))
             ->assertSuccessful()
@@ -23,7 +23,7 @@ class RegisterTest extends TestCase
     }
 
     /** @test */
-    public function is_redirected_if_already_logged_in()
+    public function is_redirected_if_already_logged_in(): void
     {
         $user = User::factory()->create();
 
@@ -34,7 +34,7 @@ class RegisterTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_register()
+    public function a_user_can_register(): void
     {
         Event::fake();
 
@@ -53,7 +53,7 @@ class RegisterTest extends TestCase
     }
 
     /** @test */
-    public function name_is_required()
+    public function name_is_required(): void
     {
         Livewire::test('auth.register')
             ->set('name', '')
@@ -62,7 +62,7 @@ class RegisterTest extends TestCase
     }
 
     /** @test */
-    public function email_is_required()
+    public function email_is_required(): void
     {
         Livewire::test('auth.register')
             ->set('email', '')
@@ -71,7 +71,7 @@ class RegisterTest extends TestCase
     }
 
     /** @test */
-    public function email_is_valid_email()
+    public function email_is_valid_email(): void
     {
         Livewire::test('auth.register')
             ->set('email', 'tallstack')
@@ -80,7 +80,7 @@ class RegisterTest extends TestCase
     }
 
     /** @test */
-    public function email_hasnt_been_taken_already()
+    public function email_hasnt_been_taken_already(): void
     {
         User::factory()->create(['email' => 'tallstack@example.com']);
 
@@ -91,7 +91,7 @@ class RegisterTest extends TestCase
     }
 
     /** @test */
-    public function see_email_hasnt_already_been_taken_validation_message_as_user_types()
+    public function see_email_hasnt_already_been_taken_validation_message_as_user_types(): void
     {
         User::factory()->create(['email' => 'tallstack@example.com']);
 
@@ -104,7 +104,7 @@ class RegisterTest extends TestCase
     }
 
     /** @test */
-    public function password_is_required()
+    public function password_is_required(): void
     {
         Livewire::test('auth.register')
             ->set('password', '')
@@ -114,7 +114,7 @@ class RegisterTest extends TestCase
     }
 
     /** @test */
-    public function password_is_minimum_of_eight_characters()
+    public function password_is_minimum_of_eight_characters(): void
     {
         Livewire::test('auth.register')
             ->set('password', 'secret')
@@ -124,7 +124,7 @@ class RegisterTest extends TestCase
     }
 
     /** @test */
-    public function password_matches_password_confirmation()
+    public function password_matches_password_confirmation(): void
     {
         Livewire::test('auth.register')
             ->set('email', 'tallstack@example.com')
