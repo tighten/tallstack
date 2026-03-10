@@ -4,23 +4,26 @@ namespace App\Http\Livewire;
 
 use App\Models\Resource;
 use Filament\Forms;
-use Filament\Notifications\Notification; 
+use Filament\Notifications\Notification;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Str;
 use Livewire\Component;
 
-class SubmitResource extends Component implements Forms\Contracts\HasForms 
+class SubmitResource extends Component implements Forms\Contracts\HasForms
 {
     use Forms\Concerns\InteractsWithForms;
 
     public Resource $resource;
 
     public $title;
+
     public $url;
+
     public $description;
+
     public $captcha;
 
-    protected function getFormSchema(): array 
+    protected function getFormSchema(): array
     {
         return [
             Forms\Components\TextInput::make('title')->required()->rules(['min:3']),
@@ -29,39 +32,41 @@ class SubmitResource extends Component implements Forms\Contracts\HasForms
             \Yepsua\Filament\Forms\Components\Captcha::make('captcha')->required()->rules(['min:3']),
             // ...
         ];
-    } 
+    }
 
-    protected function getFormModel(): string 
+    protected function getFormModel(): string
     {
         return Resource::class;
-    } 
+    }
 
-    public function create(): void 
+    public function create(): void
     {
         $formData = $this->form->getState();
         $formData['slug'] = strtolower(Str::slug($formData['title']));
         $formData['image'] = '';
         Resource::create($formData);
 
-        // Notification::make() 
+        // Notification::make()
         //     ->title('Saved successfully')
         //     ->success()
         //     ->send();
 
-        $this->title = $this->url = $this->description = $this->captcha = "";
-    } 
+        $this->title = $this->url = $this->description = $this->captcha = '';
+    }
 
-    private function generateUniqueSlug($value){
+    private function generateUniqueSlug($value)
+    {
         $temp = str_slug($value, '-');
-        if(!Resource::all()->where('slug',$temp)->isEmpty()){
+        if (! Resource::all()->where('slug', $temp)->isEmpty()) {
             $i = 1;
-            $newslug = $temp . '-' . $i;
-            while(!Resource::all()->where('slug',$newslug)->isEmpty()){
+            $newslug = $temp.'-'.$i;
+            while (! Resource::all()->where('slug', $newslug)->isEmpty()) {
                 $i++;
-                $newslug = $temp . '-' . $i;
+                $newslug = $temp.'-'.$i;
             }
-            $temp =  $newslug;
+            $temp = $newslug;
         }
+
         return $temp;
     }
 

@@ -3,22 +3,20 @@
 namespace Tests\Feature\Auth;
 
 use App\Models\User;
-use Tests\TestCase;
-use Livewire\Livewire;
-use Illuminate\Support\Facades\Hash;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\URL;
+use Livewire\Livewire;
+use Tests\TestCase;
 
 class VerifyTest extends TestCase
 {
     use RefreshDatabase;
 
     /** @test */
-    public function can_view_verification_page()
+    public function can_view_verification_page(): void
     {
         $user = User::factory()->create([
             'email_verified_at' => null,
@@ -32,7 +30,7 @@ class VerifyTest extends TestCase
     }
 
     /** @test */
-    public function can_resend_verification_email()
+    public function can_resend_verification_email(): void
     {
         $user = User::factory()->create();
 
@@ -44,7 +42,7 @@ class VerifyTest extends TestCase
     }
 
     /** @test */
-    public function can_verify()
+    public function can_verify(): void
     {
         $user = User::factory()->create([
             'email_verified_at' => null,

@@ -14,7 +14,7 @@ class LoginTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function can_view_login_page()
+    public function can_view_login_page(): void
     {
         $this->get(route('login'))
             ->assertSuccessful()
@@ -22,7 +22,7 @@ class LoginTest extends TestCase
     }
 
     /** @test */
-    public function is_redirected_if_already_logged_in()
+    public function is_redirected_if_already_logged_in(): void
     {
         $user = User::factory()->create();
 
@@ -33,7 +33,7 @@ class LoginTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_login()
+    public function a_user_can_login(): void
     {
         $user = User::factory()->create(['password' => Hash::make('password')]);
 
@@ -46,7 +46,7 @@ class LoginTest extends TestCase
     }
 
     /** @test */
-    public function is_redirected_to_the_home_page_after_login()
+    public function is_redirected_to_the_home_page_after_login(): void
     {
         $user = User::factory()->create(['password' => Hash::make('password')]);
 
@@ -58,7 +58,7 @@ class LoginTest extends TestCase
     }
 
     /** @test */
-    public function email_is_required()
+    public function email_is_required(): void
     {
         $user = User::factory()->create(['password' => Hash::make('password')]);
 
@@ -69,7 +69,7 @@ class LoginTest extends TestCase
     }
 
     /** @test */
-    public function email_must_be_valid_email()
+    public function email_must_be_valid_email(): void
     {
         $user = User::factory()->create(['password' => Hash::make('password')]);
 
@@ -81,7 +81,7 @@ class LoginTest extends TestCase
     }
 
     /** @test */
-    public function password_is_required()
+    public function password_is_required(): void
     {
         $user = User::factory()->create(['password' => Hash::make('password')]);
 
@@ -92,7 +92,7 @@ class LoginTest extends TestCase
     }
 
     /** @test */
-    public function bad_login_attempt_shows_message()
+    public function bad_login_attempt_shows_message(): void
     {
         $user = User::factory()->create();
 

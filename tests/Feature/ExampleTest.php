@@ -8,10 +8,8 @@ class ExampleTest extends TestCase
 {
     /**
      * A basic test example.
-     *
-     * @return void
      */
-    public function testBasicTest()
+    public function test_basic_test(): void
     {
         $this->get(route('home'))->assertSuccessful();
     }

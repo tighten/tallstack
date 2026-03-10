@@ -2,8 +2,9 @@
 
 namespace App\Http\Livewire\Auth\Passwords;
 
-use Livewire\Component;
+use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Support\Facades\Password;
+use Livewire\Component;
 
 class Email extends Component
 {
@@ -32,10 +33,8 @@ class Email extends Component
 
     /**
      * Get the broker to be used during password reset.
-     *
-     * @return \Illuminate\Contracts\Auth\PasswordBroker
      */
-    public function broker()
+    public function broker(): PasswordBroker
     {
         return Password::broker();
     }
