@@ -11,5 +11,5 @@ return [
     'blade_tags' => [
         '<resourceloop>' => '@foreach(\App\Models\Resource::where("approved", 1)->get() as $resource)',
         '</resourceloop>' => '@endforeach',
-    ]
+    ],
 ];
