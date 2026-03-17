@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "devdojo/tails": "^0.90.10",
+        "devdojo/tails": "^1.6",
         "doctrine/dbal": "^3.4",
         "filament/filament": "^2.0",
         "filament/notifications": "^2.0",
